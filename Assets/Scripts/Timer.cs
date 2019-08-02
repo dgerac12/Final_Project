@@ -19,11 +19,14 @@ public class Timer : MonoBehaviour
 
     private bool restart;
 
+    private IEnumerator countdown;
+
     void Start()
     {
+        countdown = Countdown();
         restart = false;
         timeUpText.text = "";
-        StartCoroutine (Countdown());
+        StartCoroutine (countdown);
         Time.timeScale = 1;
         playerController = player.GetComponent<PlayerController>();
     }
@@ -43,6 +46,11 @@ public class Timer : MonoBehaviour
         if (playerController.lives == 0)
         {
             Destroy(this);
+        }
+
+        if (string.Compare(playerController.winText.text, "You Win!") == 0)
+        {
+                StopCoroutine(countdown);
         }
     }
 

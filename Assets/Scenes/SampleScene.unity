@@ -6368,6 +6368,7 @@ MonoBehaviour:
   overText: {fileID: 2139177114}
   restartText: {fileID: 1722057675}
   restartWinText: {fileID: 1054121639}
+  score: 0
   lives: 0
   jumpForce: 3
 --- !u!95 &1934539698

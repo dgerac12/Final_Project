@@ -34,7 +34,7 @@ public TextMeshProUGUI restartText;
 
 public TextMeshProUGUI restartWinText;
 
-private int score;
+public int score;
 public int lives;
 public float jumpForce;
 
@@ -143,7 +143,7 @@ private bool restart;
                 StartCoroutine("PowerUpTime");
             }
 
-        if (score == 4 && !other.gameObject.CompareTag("Enemy"))
+        if (score == 4 && !other.gameObject.CompareTag("Enemy") && !other.gameObject.CompareTag("Powerup"))
             {
                 transform.position = new Vector3(16f, -2.2f, 0f);
                 camera.transform.position = new Vector3(23.75f, 0.6f, -10f);
